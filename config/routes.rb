@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     get "/all_interviewers_list", to:"users#all_interviewers_list", as:"all_interviewers_list"
     resources :applicant_informations
     resources :interviewer_profiles
+    resources :candidate_interviews, only: [:create, :new, :update]
   end
   root "users#index"
 end

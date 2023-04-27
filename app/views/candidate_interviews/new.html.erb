@@ -1,0 +1,22 @@
+<%= params %>
+<h1> On candidate Interview Page </h1>
+
+<%= form_with model:[User.find(params[:user_id]), @appointment] do |f| %>
+    
+    
+
+    <%= f.label :interviewer_name , "Interviewer Name"  %>
+    <%= f.select :interviewer_name , @interviewer_name %> <br> <br>
+
+    <%= f.label :time_slot %>
+    <%= f.text_area :time_slot %> <br><br>
+
+    <%= f.label :information %>
+    <%= f.text_area :information %> <br><br>
+
+    <%= f.hidden_field :candidate, value: params[:user_id] %>
+
+    <%= f.submit "Schedule the Interview" %> <br><br>
+
+
+<% end %>

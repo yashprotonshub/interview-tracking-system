@@ -1,0 +1,2 @@
+module CandidateInterviewsHelper
+end

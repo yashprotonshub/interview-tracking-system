@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_04_27_102332) do
+ActiveRecord::Schema.define(version: 2023_04_27_120256) do
 
   create_table "applicant_informations", force: :cascade do |t|
     t.string "stream"
@@ -25,6 +25,16 @@ ActiveRecord::Schema.define(version: 2023_04_27_102332) do
     t.datetime "updated_at", null: false
     t.string "status", default: "pending", null: false
     t.index ["user_id"], name: "index_applicant_informations_on_user_id"
+  end
+
+  create_table "candidate_interviews", force: :cascade do |t|
+    t.text "time_slot"
+    t.text "information"
+    t.text "feedback", default: "None", null: false
+    t.string "interviewer_name"
+    t.integer "candidate"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "interviewer_profiles", force: :cascade do |t|
