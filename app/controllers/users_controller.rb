@@ -7,7 +7,7 @@ class UsersController < ApplicationController
         @user_profile= User.find(params[:user_id]).applicant_information
     end
 
-    def interviewer_profile
-
+    def user_status
+        @user_status= User.find(params[:user_id]).applicant_information.status
     end
 end

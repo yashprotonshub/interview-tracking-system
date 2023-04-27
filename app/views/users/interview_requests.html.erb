@@ -3,8 +3,12 @@
     <% if current_user.id == all_applicants.id  %>
         <% next %>
     <% elsif all_applicants.applicant_type=="Candidate" %>
-        <%= link_to all_applicants.name, user_profile_path(all_applicants.id) %>
+        <%= link_to all_applicants.name, user_profile_path(all_applicants.id), style:"text-decoration:none;" %> <br> <%= link_to "Reject", user_candidate_rejection_path(all_applicants.id), method: :post %> <br> <br> 
     <% else %>
         <% next %>
     <% end %>
 <% end %>
+
+<%= link_to "Back", root_path %>
+
+

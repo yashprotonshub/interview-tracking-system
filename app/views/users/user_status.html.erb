@@ -1,0 +1,12 @@
+<h1 >
+
+    <% if @user_status== "pending" %>
+    We will get to you soon!
+    <% elsif @user_status== "rejected" %>
+    We're going forward with another candidate! Pls Apply after some time.
+    <% else %>
+    Your Appointment is scheduled with Us, CONGO! 
+    <% end %>
+</h1>
+
+<%= link_to "Back", root_path %>

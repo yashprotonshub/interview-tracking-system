@@ -4,7 +4,7 @@
     <%= render "partial/candidate" %>
     
 <% elsif current_user.applicant_type == "HR" %>
-    <%= link_to "All Interview Requests", user_interview_requests_path(current_user) %>
+    <%= render "partial/hr" %>
 <% else %>
     <%= link_to "All Scheduled Interviews", user_scheduled_interviews_path(current_user) %>
 <% end %>
