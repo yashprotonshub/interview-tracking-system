@@ -6,16 +6,17 @@ class ApplicationController < ActionController::Base
 
 
     def after_sign_in_path_for(resource)
-        if resource.applicant_type == "Interviewer"
-            new_user_interviewer_profile_path(resource)
+        if resource.applicant_type == "Interviewer"  
+            if current_user.interviewer_profile.present?
+                root_path
+            else
+                new_user_interviewer_profile_path(resource)         
+            end
         else
             root_path
         end
     end
 
-    def after_sign_out_path_for(resource)
-        root_path(resource)
-    end
     protected
 
         def configure_permitted_parameters

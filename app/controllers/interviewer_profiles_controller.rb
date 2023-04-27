@@ -4,7 +4,6 @@ class InterviewerProfilesController < ApplicationController
     end
 
     def create
-        debugger
         @interview=current_user.create_interviewer_profile(interview_profile_params)
         redirect_to root_path
     end

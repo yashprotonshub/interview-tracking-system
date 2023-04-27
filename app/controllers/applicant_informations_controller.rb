@@ -10,6 +10,7 @@ class ApplicantInformationsController < ApplicationController
 
     
     def candidate_rejection
+        debugger
         @rejection=User.find(params[:user_id])
         @rejection.applicant_information.update(status:"rejected")
         redirect_to  user_interview_requests_path(current_user)

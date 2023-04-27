@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     get "/scheduled_interviews", to:"users#scheduled_interviews", as:"scheduled_interviews"
     post "/candidate_rejection", to:"applicant_informations#candidate_rejection", as:"candidate_rejection"
     get "/user_status", to:"users#user_status", as:"user_status"
+    get "/all_interviewers_list", to:"users#all_interviewers_list", as:"all_interviewers_list"
     resources :applicant_informations
     resources :interviewer_profiles
   end

@@ -1,0 +1,9 @@
+<h1> ALL Interviewers LIST </h1>
+
+<% for i in @all_interviewers %>
+<p> 
+    <%= link_to i.name, user_profile_path(i.id) %>
+</p>
+<% end %>
+
+<%= link_to "Back", root_path(current_user) %>

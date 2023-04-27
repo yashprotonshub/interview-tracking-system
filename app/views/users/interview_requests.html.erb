@@ -2,7 +2,7 @@
 <% for  all_applicants in @all_applicants %>
     <% if current_user.id == all_applicants.id  %>
         <% next %>
-    <% elsif all_applicants.applicant_type=="Candidate" %>
+    <% elsif all_applicants.applicant_type=="Candidate" && all_applicants.applicant_information.status== "pending"  %>
         <%= link_to all_applicants.name, user_profile_path(all_applicants.id), style:"text-decoration:none;" %> <br> <%= link_to "Reject", user_candidate_rejection_path(all_applicants.id), method: :post %> <br> <br> 
     <% else %>
         <% next %>

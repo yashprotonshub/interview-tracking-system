@@ -1,11 +1,24 @@
-<h1> On User Profile Page </h1>
-<p>
-    Name :- <%= User.find(params[:user_id]).name %> <br> <br>
-    Stream :- <%= @user_profile.stream %><br> <br>
-    Major :- <%= @user_profile.major %><br> <br>
-    10 % :- <%= @user_profile.tenth_percentage %><br> <br>
-    12 % :- <%= @user_profile.twelth_percentage %><br> <br>
-    Tech Stack :- <%= @user_profile.tech_stack %><br> <br>
-    About :- <%= @user_profile.bio %>
-</p>
+<% if @user_profile.applicant_type=="Candidate" %>
+    <h1> Candidate Profile </h1>
+    <p>
+        Name :- <%= @user_profile.name %> <br> <br>
+        Stream :- <%= @user_profile.applicant_information.stream %><br> <br>
+        Major :- <%= @user_profile.applicant_information.major %><br> <br>
+        10 % :- <%= @user_profile.applicant_information.tenth_percentage %><br> <br>
+        12 % :- <%= @user_profile.applicant_information.twelth_percentage %><br> <br>
+        Tech Stack :- <%= @user_profile.applicant_information.tech_stack %><br> <br>
+        About :- <%= @user_profile.applicant_information.bio %>
+    </p>
+<% else %>
+    <h1> Interviewer Profile </h1>
+    <p>
+        Name :- <%= @user_profile.name %> <br> <br>
+        Experience :- <%= @user_profile.interviewer_profile.exp %> <br> <br>
+        Skillset :- <%= @user_profile.interviewer_profile.skillset %> <br> <br>
+        Bio :- <%= @user_profile.interviewer_profile.bio %> <br> <br>
+        
+    </p>
+    <%= link_to "Back", user_all_interviewers_list_path(current_user) %> 
+<% end %>
+
 
