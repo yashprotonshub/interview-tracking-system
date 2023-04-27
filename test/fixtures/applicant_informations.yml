@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  stream: MyString
+  major: MyString
+  tenth_percentage: 1.5
+  twelth_percentage: 1.5
+  tech_stack: MyText
+  bio: MyText
+  contact_number: 1
+  user: one
+
+two:
+  stream: MyString
+  major: MyString
+  tenth_percentage: 1.5
+  twelth_percentage: 1.5
+  tech_stack: MyText
+  bio: MyText
+  contact_number: 1
+  user: two

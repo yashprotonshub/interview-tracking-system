@@ -1,0 +1,8 @@
+<h1> On index Page</h1>
+<% if current_user.applicant_type=="Candidate" %>
+    <%= link_to "Schedule an Interview", new_user_applicant_information_path(current_user) %>
+<% else %>
+    <%= link_to "All Interview Requests", user_interview_requests_path(current_user) %>
+<% end %>
+
+<%= link_to "Sign OUt", destroy_user_session_path, method: :delete, style:"text-decoration:none" %>

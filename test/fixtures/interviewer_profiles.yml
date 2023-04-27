@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  exp: 1.5
+  skillset: MyText
+  bio: MyText
+  user: one
+
+two:
+  exp: 1.5
+  skillset: MyText
+  bio: MyText
+  user: two

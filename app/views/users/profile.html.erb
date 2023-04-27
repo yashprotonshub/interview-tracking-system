@@ -1,0 +1,11 @@
+<h1> On User Profile Page </h1>
+<p>
+    Name :- <%= User.find(params[:user_id]).name %> <br> <br>
+    Stream :- <%= @user_profile.stream %><br> <br>
+    Major :- <%= @user_profile.major %><br> <br>
+    10 % :- <%= @user_profile.tenth_percentage %><br> <br>
+    12 % :- <%= @user_profile.twelth_percentage %><br> <br>
+    Tech Stack :- <%= @user_profile.tech_stack %><br> <br>
+    About :- <%= @user_profile.bio %>
+</p>
+

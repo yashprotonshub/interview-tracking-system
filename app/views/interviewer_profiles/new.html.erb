@@ -1,0 +1,19 @@
+<h1> Welcome <%= current_user.name %>  </h1>
+<h2> Please  fill out the form for our Records </h2>
+
+
+<%= form_with model:[current_user, @interviewer] do |f| %>
+    
+    <%= f.label :exp, "Your Total Expirience" %>
+    <%= f.text_field :exp %> <br> <br>
+
+    <%= f.label :skillset, "Gained Skillset" %>
+    <%= f.text_area :skillset %> <br> <br>
+
+    
+    <%= f.label :bio, "About Your Journey" %>
+    <%= f.text_area :bio %> <br> <br>
+
+    <%= f.submit "Submit Information" %>
+    
+<% end %>

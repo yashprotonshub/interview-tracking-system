@@ -1,0 +1,8 @@
+<h1>All Interview Requests </h1>
+<% for  all_applicants in @all_applicants %>
+    <% if current_user.id == all_applicants.id %>
+        <% next %>
+    <% else %>
+        <%= link_to all_applicants.name, user_profile_path(all_applicants.id) %>
+    <% end %>
+<% end %>

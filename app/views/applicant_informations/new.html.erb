@@ -1,0 +1,30 @@
+<h1> Welcome <%= current_user.name %>  </h1>
+<h2> Please  fill out the form to Schedule The Interview </h2>
+
+
+<%= form_with model:[current_user, @applicant] do |f| %>
+    
+    <%= f.label :contact_number, "Contact Number" %>
+    <%= f.text_field :contact_number %> <br> <br>
+
+    <%= f.label :tenth_percentage, "10th Percentage" %>
+    <%= f.text_field :tenth_percentage %> <br> <br>
+
+    <%= f.label :twelth_percentage, "12th Percentage" %>
+    <%= f.text_field :twelth_percentage %> <br> <br>
+    
+    <%= f.label :stream, "Stream" %>
+    <%= f.text_field :stream %> <br> <br>
+
+    <%= f.label :major, "Major" %>
+    <%= f.text_field :major %> <br> <br>
+
+    <%= f.label :tech_stack, "Skills" %>
+    <%= f.text_area :tech_stack %> <br> <br>
+
+    <%= f.label :bio, "About Yourself" %>
+    <%= f.text_area :bio %> <br> <br>
+
+    <%= f.submit "Submit Information" %>
+    
+<% end %>
