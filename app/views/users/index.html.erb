@@ -1,11 +1,10 @@
 <h1> On index Page</h1>
 <%= current_user.applicant_type %> <br> <br>
 <% if current_user.applicant_type == "Candidate" %>
-    <%= link_to "Schedule an Interview", new_user_applicant_information_path(current_user) %>
+    <%= render "partial/candidate" %>
+    
 <% elsif current_user.applicant_type == "HR" %>
     <%= link_to "All Interview Requests", user_interview_requests_path(current_user) %>
 <% else %>
     <%= link_to "All Scheduled Interviews", user_scheduled_interviews_path(current_user) %>
 <% end %>
-
-<%= link_to "Sign OUt", destroy_user_session_path, method: :delete, style:"text-decoration:none" %>
