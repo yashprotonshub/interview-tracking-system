@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     get "/interview_requests", to:"users#interview_requests", as:"interview_requests"
     get "/profile", to:"users#profile", as:"profile"
     get "/interviewer_profile", to:"users#interviewer_profile", as:"interviewer_profile"
+    get "/scheduled_interviews", to:"users#scheduled_interviews", as:"scheduled_interviews"
     resources :applicant_informations
     resources :interviewer_profiles
   end
