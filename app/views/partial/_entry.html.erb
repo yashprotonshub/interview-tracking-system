@@ -3,7 +3,7 @@
     
         <div>
             <%= f.label :interview_status, "Interview Status" %> 
-            <%= f.select :interview_status, ["Done", "Pending"] %> <br> <br>
+            <%= f.select :interview_status, ["Done", "pending"] %> <br> <br>
         </div>
 
         <%= f.hidden_field :candidate, value: @candidate_name %>
