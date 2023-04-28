@@ -1,4 +1,6 @@
 <%= link_to "All Interview Requests", user_interview_requests_path(current_user) %> <br> <br> <br> <br> <br> 
 
 <%= link_to "All Interviewers List", user_all_interviewers_list_path(current_user) %> <br> <br> <br> <br>
+
+<%= link_to "Scheduled Interviews", user_scheduled_interviews_path(current_user) %> <br> <br> 
 <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>

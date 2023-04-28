@@ -4,8 +4,10 @@
     We will get to you soon!
     <% elsif @user_status== "rejected" %>
     We're going forward with another candidate! Pls Apply after some time.
-    <% else %>
+    <% elsif @user_status== "scheduled" %>
     Your Appointment is scheduled with Us, CONGO! 
+    <% else %>
+    Congratulations, You are Appointed with Us, will instruct you everything on the mail 
     <% end %>
 </h1>
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_04_27_120256) do
+ActiveRecord::Schema.define(version: 2023_04_28_062349) do
 
   create_table "applicant_informations", force: :cascade do |t|
     t.string "stream"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2023_04_27_120256) do
     t.integer "candidate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "interview_status", default: "pending"
   end
 
   create_table "interviewer_profiles", force: :cascade do |t|

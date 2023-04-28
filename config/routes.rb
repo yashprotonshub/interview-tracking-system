@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     post "/candidate_rejection", to:"applicant_informations#candidate_rejection", as:"candidate_rejection"
     get "/user_status", to:"users#user_status", as:"user_status"
     get "/all_interviewers_list", to:"users#all_interviewers_list", as:"all_interviewers_list"
+    get "/all_scheduled_interviews_for_interviewers", to:"users#all_scheduled_interviews_for_interviewers", as:"all_scheduled_interviews_for_interviewers"
     resources :applicant_informations
     resources :interviewer_profiles
     resources :candidate_interviews, only: [:create, :new, :update]
