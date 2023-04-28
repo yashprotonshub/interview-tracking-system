@@ -1,4 +1,5 @@
 <h1> Scheduled Interviews for You </h1>
+<%= params %>
 <table class="table-style">
     <thead>
       <tr>
@@ -18,7 +19,7 @@
     
         <td class="table-data-style"> <%= User.find(scheduled_interviews.candidate).name %>  </td>
         <td class="table-data-style"><%= scheduled_interviews.time_slot %></td>
-        <td class="user-id-<%= current_user.id %>"><%= link_to "Click to Update the status", user_update_candidate_interview_status_entry_path(current_user), remote:true%></td>
+        <td class="user-id-<%= current_user.id %>"><%= link_to "Click to Update the status", user_update_candidate_interview_status_entry_path(current_user, candidate_name: scheduled_interviews.candidate), remote:true%></td>
         
       </tr>
       <% end %>

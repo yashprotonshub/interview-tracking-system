@@ -6,13 +6,11 @@
             <%= f.select :interview_status, ["Done", "Pending"] %> <br> <br>
         </div>
 
-        
-        
+        <%= f.hidden_field :candidate, value: @candidate_name %>
+
         <div style="padding-left:60px;">
             <%= f.submit "Done" %>
         </div>
-    
-    
     
     <% end %>
 </div>

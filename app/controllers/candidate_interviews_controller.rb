@@ -13,11 +13,13 @@ class CandidateInterviewsController < ApplicationController
     end
 
     def update_candidate_interview_status
-        debugger
+        @update_candidate_interview_status=CandidateInterview.find_by(candidate:params[:user][:candidate].to_i,interviewer_name:User.find(params[:user_id].to_i).name)
+        @update_candidate_interview_status.update(interview_status:params[:user]["interview_status"])
+        redirect_to user_all_scheduled_interviews_for_interviewers_path(current_user)
     end
 
     def update_candidate_interview_status_entry
-          
+        @candidate_name= params[:candidate_name].to_i
     end
 
     private
