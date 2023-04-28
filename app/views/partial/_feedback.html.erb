@@ -1,10 +1,12 @@
 <div style="padding-left:20px; padding-top:20px;">    
-    <%= form_with(model: current_user, url: user_update_candidate_interview_status_path(current_user), method: :patch) do |f| %> 
+    <%= form_with(model: current_user, url: user_update_candidate_interview_feedback_path(current_user), method: :patch) do |f| %> 
     
         <div>
             <%= f.label :feedback , "Interview Feedback" %> 
             <%= f.text_area :feedback %> 
         </div>
+
+        <%= f.hidden_field :candidate, value: candidate_id_for_partial %>
 
         
 

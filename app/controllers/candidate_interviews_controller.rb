@@ -22,6 +22,12 @@ class CandidateInterviewsController < ApplicationController
         @candidate_name= params[:candidate_name].to_i
     end
 
+    def update_candidate_interview_feedback
+        @update_candidate_interview_feedback=CandidateInterview.find_by(candidate:params[:user][:candidate].to_i, interviewer_name: User.find(params[:user_id].to_i).name)
+        @update_candidate_interview_feedback.update(feedback: params[:user][:feedback])
+        redirect_to user_all_scheduled_interviews_for_interviewers_path(current_user) 
+    end
+
     private
         def candidate_interview_params
             params.require(:candidate_interview).permit(:feedback, :time_slot, :interviewer_name, :information, :candidate)

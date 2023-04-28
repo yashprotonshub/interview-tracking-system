@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     patch "/update_candidate_interview_status", to:"candidate_interviews#update_candidate_interview_status", as:"update_candidate_interview_status"
     get "/update_candidate_interview_status_entry", to:"candidate_interviews#update_candidate_interview_status_entry", as:"update_candidate_interview_status_entry"
     get "/all_scheduled_interviews_for_interviewers", to:"users#all_scheduled_interviews_for_interviewers", as:"all_scheduled_interviews_for_interviewers"
+    patch "/update_candidate_interview_feedback", to:"candidate_interviews#update_candidate_interview_feedback", as:"update_candidate_interview_feedback"
     resources :applicant_informations
     resources :interviewer_profiles
     resources :candidate_interviews, only: [:create, :new, :update]
