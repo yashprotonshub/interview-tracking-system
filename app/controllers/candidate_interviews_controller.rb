@@ -5,12 +5,19 @@ class CandidateInterviewsController < ApplicationController
     end
 
     def create
-        
         @appointment= CandidateInterview.new(candidate_interview_params)
         @updating_status_of_candidate= User.find(params[:user_id].to_i).applicant_information
         @updating_status_of_candidate.update(status:"scheduled")
         @appointment.save
         redirect_to root_path
+    end
+
+    def update_candidate_interview_status
+        debugger
+    end
+
+    def update_candidate_interview_status_entry
+          
     end
 
     private

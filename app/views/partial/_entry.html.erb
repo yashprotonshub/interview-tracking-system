@@ -1,0 +1,18 @@
+<div style="padding-left:20px; padding-top:20px;">    
+    <%= form_with(model: current_user, url: user_update_candidate_interview_status_path(current_user), method: :patch) do |f| %> 
+    
+        <div>
+            <%= f.label :interview_status, "Interview Status" %> 
+            <%= f.select :interview_status, ["Done", "Pending"] %> <br> <br>
+        </div>
+
+        
+        
+        <div style="padding-left:60px;">
+            <%= f.submit "Done" %>
+        </div>
+    
+    
+    
+    <% end %>
+</div>
