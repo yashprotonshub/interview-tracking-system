@@ -4,6 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_one :applicant_information
-  has_one :interviewer_profile
+  has_one :applicant_information, dependent: :destroy
+  has_one :interviewer_profile, dependent: :destroy
 end
+
+
+
+

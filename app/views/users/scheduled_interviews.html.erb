@@ -25,9 +25,11 @@
           <td class="table-data-style"><%= scheduled_interviews.feedback %></td>
         <% else %>
           <td class="table-data-style">Interview is yet to be Done</td> 
-        <% end %>   
-        <td class="table-data-style"><%= link_to "Hire Candidate", user_update_applicant_information_status_to_accepted_path(scheduled_interviews.candidate), method: :patch, style:"text-decoration:none;" %> <%= link_to "Reject Candidate", user_update_applicant_information_status_to_rejected_path(scheduled_interviews.candidate), method: :patch, style:"text-decoration:none;" %>  </td>
-        
+        <% end %>
+        <% if scheduled_interviews.interview_status== "Done" %>   
+          <td class="table-data-style"><%= link_to "Hire Candidate", user_update_applicant_information_status_to_accepted_path(scheduled_interviews.candidate), method: :patch, style:"text-decoration:none;" %> <%= link_to "Reject Candidate", user_update_applicant_information_status_to_rejected_path(scheduled_interviews.candidate), method: :patch, style:"text-decoration:none;" %>  </td>
+        <% else %>
+        <% end %>
       </tr>
         <% c=c+1 %>
       <% end %>
