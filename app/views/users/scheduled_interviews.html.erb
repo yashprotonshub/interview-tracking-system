@@ -7,6 +7,7 @@
         <th class="table-heading-style">Candidate Name</th>
         <th class="table-heading-style">Time Slot</th>
         <th class="table-heading-style">Status</th>
+        <th class="table-heading-style">Feedback from the Interviewer</th>
       </tr>
     </thead>
     <tbody>
@@ -19,6 +20,11 @@
         <td class="table-data-style"> <%= User.find(scheduled_interviews.candidate).name %>  </td>
         <td class="table-data-style"><%= scheduled_interviews.time_slot %></td>
         <td class="table-data-style"><%= scheduled_interviews.interview_status %></td>
+        <% if (scheduled_interviews.feedback != "None") %> 
+          <td class="table-data-style"><%= scheduled_interviews.feedback %></td>
+        <% else %>
+          <td class="table-data-style">Interview is yet to be Done</td> 
+        <% end %>   
       </tr>
       <% end %>
         <% c=2 %>
