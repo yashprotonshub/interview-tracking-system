@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     get "/update_candidate_interview_status_entry", to:"candidate_interviews#update_candidate_interview_status_entry", as:"update_candidate_interview_status_entry"
     get "/all_scheduled_interviews_for_interviewers", to:"users#all_scheduled_interviews_for_interviewers", as:"all_scheduled_interviews_for_interviewers"
     patch "/update_candidate_interview_feedback", to:"candidate_interviews#update_candidate_interview_feedback", as:"update_candidate_interview_feedback"
+    patch "/update_applicant_information_status_to_accepted", to:"applicant_informations#update_applicant_information_status_to_accepted", as:"update_applicant_information_status_to_accepted"
+    patch "/update_applicant_information_status_to_rejected", to:"applicant_informations#update_applicant_information_status_to_rejected", as:"update_applicant_information_status_to_rejected"
     resources :applicant_informations
     resources :interviewer_profiles
     resources :candidate_interviews, only: [:create, :new, :update]

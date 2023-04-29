@@ -8,6 +8,7 @@
         <th class="table-heading-style">Time Slot</th>
         <th class="table-heading-style">Status</th>
         <th class="table-heading-style">Feedback from the Interviewer</th>
+        <th class="table-heading-style">Action</th>
       </tr>
     </thead>
     <tbody>
@@ -25,10 +26,11 @@
         <% else %>
           <td class="table-data-style">Interview is yet to be Done</td> 
         <% end %>   
-      </tr>
-      <% c=c+1 %>
-      <% end %>
+        <td class="table-data-style"><%= link_to "Hire Candidate", user_update_applicant_information_status_to_accepted_path(scheduled_interviews.candidate), method: :patch, style:"text-decoration:none;" %> <%= link_to "Reject Candidate", user_update_applicant_information_status_to_rejected_path(scheduled_interviews.candidate), method: :patch, style:"text-decoration:none;" %>  </td>
         
+      </tr>
+        <% c=c+1 %>
+      <% end %>
     </tbody>
 </table>
 <%= link_to "Back", root_path %>

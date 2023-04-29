@@ -22,4 +22,6 @@ class UsersController < ApplicationController
     def all_scheduled_interviews_for_interviewers
         @all_scheduled_interviews_for_interviewers=CandidateInterview.where(interviewer_name:current_user.name)
     end
+    
+    
 end
