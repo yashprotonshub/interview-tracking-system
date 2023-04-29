@@ -20,7 +20,7 @@
       
       <tr>
         <td class="table-data-style"><%= c %></td>
-        <td class="table-data-style"> <%= User.find(scheduled_interviews.candidate).name %>  </td>
+        <td class="table-data-style"> <%= link_to User.find(scheduled_interviews.candidate).name, user_profile_path(current_user, user_id: scheduled_interviews.candidate), style:"text-decoration:none;" %>  </td>
         <td class="table-data-style"><%= scheduled_interviews.time_slot %></td>
         <td class="table-data-style"><%= scheduled_interviews.interview_status %> </td>
         <% if scheduled_interviews.interview_status== "pending" %>
