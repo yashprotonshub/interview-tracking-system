@@ -2,7 +2,7 @@
 <% if current_user.applicant_information.present? %>
     <%= link_to "Status", user_user_status_path(current_user) %> <br> <br>
 <% else %>
-    <%= link_to "Schedule an Interview", new_user_applicant_information_path(current_user) %> <br> <br>
+    <%= link_to "Apply for Protonshub Careers", new_user_applicant_information_path(current_user), style:"text-decoration:none; " %> <br> <br>
 <% end %>
 
 

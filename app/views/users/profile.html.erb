@@ -11,9 +11,10 @@
     </p>
     <% if current_user.applicant_type=="Interviewer" %>
         <%= link_to "Back", user_all_scheduled_interviews_for_interviewers_path(current_user) %>
+    <% elsif current_user.applicant_type=="HR"  %>
+    <%= link_to "Back", user_scheduled_interviews_path(current_user) %>    
     <% else %>
         <%= link_to "Back", user_interview_requests_path(current_user) %>
-        
     <% end %>
 <% else %>
     <h1> Interviewer Profile </h1>

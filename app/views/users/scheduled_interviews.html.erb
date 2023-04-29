@@ -17,7 +17,7 @@
       <tr>
         <td class="table-data-style"><%= c %></td>
         <td class="table-data-style"><%= scheduled_interviews.interviewer_name %></td>
-        <td class="table-data-style"> <%= User.find(scheduled_interviews.candidate).name %>  </td>
+        <td class="table-data-style"> <%= link_to User.find(scheduled_interviews.candidate).name, user_profile_path(scheduled_interviews.candidate), style:"text-decoration:none;" %>  </td>
         <td class="table-data-style"><%= scheduled_interviews.time_slot %></td>
         <td class="table-data-style"><%= scheduled_interviews.interview_status %></td>
         <% if (scheduled_interviews.feedback != "None") %> 
@@ -26,8 +26,9 @@
           <td class="table-data-style">Interview is yet to be Done</td> 
         <% end %>   
       </tr>
+      <% c=c+1 %>
       <% end %>
-        <% c=2 %>
+        
     </tbody>
 </table>
 <%= link_to "Back", root_path %>
