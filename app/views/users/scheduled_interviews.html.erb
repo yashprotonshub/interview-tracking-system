@@ -16,23 +16,26 @@
         <% for scheduled_interviews in @scheduled_interviews %>
       
       <tr>
-        <td class="table-data-style"><%= c %></td>
-        <td class="table-data-style"><%= scheduled_interviews.interviewer_name %></td>
-        <td class="table-data-style"> <%= link_to User.find(scheduled_interviews.candidate).name, user_profile_path(scheduled_interviews.candidate), style:"text-decoration:none;" %>  </td>
-        <td class="table-data-style"><%= scheduled_interviews.time_slot %></td>
-        <td class="table-data-style"><%= scheduled_interviews.interview_status %></td>
-        <% if (scheduled_interviews.feedback != "None") %> 
-          <td class="table-data-style"><%= scheduled_interviews.feedback %></td>
-        <% else %>
-          <td class="table-data-style">Interview is yet to be Done</td> 
-        <% end %>
-        <% if scheduled_interviews.interview_status== "Done" %>   
-          <td class="table-data-style"><%= link_to "Hire Candidate", user_update_applicant_information_status_to_accepted_path(scheduled_interviews.candidate), method: :patch, style:"text-decoration:none;" %> <%= link_to "Reject Candidate", user_update_applicant_information_status_to_rejected_path(scheduled_interviews.candidate), method: :patch, style:"text-decoration:none;" %>  </td>
-        <% else %>
-        <% end %>
+          <td class="table-data-style"><%= c %></td>
+          <td class="table-data-style"><%= scheduled_interviews.interviewer_name %></td>
+          <td class="table-data-style"> <%= link_to User.find(scheduled_interviews.candidate).name, user_profile_path(scheduled_interviews.candidate), style:"text-decoration:none;" %>  </td>
+          <td class="table-data-style"><%= scheduled_interviews.time_slot %></td>
+          <td class="table-data-style"><%= scheduled_interviews.interview_status %></td>
+          <% if (scheduled_interviews.feedback != "None") %> 
+            <td class="table-data-style"><%= scheduled_interviews.feedback %></td>
+          <% else %>
+            <td class="table-data-style">Interview is yet to be Done</td> 
+          <% end %>
+          <% if scheduled_interviews.interview_status== "Done" && User.find(scheduled_interviews.candidate).applicant_information.status=="accepted" %>   
+            <td class="table-data-style"> Candidate Hired </td>
+          <% elsif scheduled_interviews.interview_status== "Done" && User.find(scheduled_interviews.candidate).applicant_information.status=="rejected" %>
+            <td class="table-data-style"> Candidate Rejected </td>   
+          <% else %>
+            <td class="table-data-style"><%= link_to "Hire Candidate", user_update_applicant_information_status_to_accepted_path(scheduled_interviews.candidate), method: :patch, style:"text-decoration:none;" %> <%= link_to "Reject Candidate", user_update_applicant_information_status_to_rejected_path(scheduled_interviews.candidate), method: :patch, style:"text-decoration:none;" %>  </td>
+          <% end %>
       </tr>
         <% c=c+1 %>
-      <% end %>
+        <% end %>
     </tbody>
 </table>
 <%= link_to "Back", root_path %>
